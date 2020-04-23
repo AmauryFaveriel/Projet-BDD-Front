@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Description renders correctly 1`] = `
+<div
+  className="sc-AxhUy gRNaaC"
+  data-testid="description"
+>
+  <label
+    className="sc-AxjAm fSUMXK"
+  >
+    <span>
+      Let's cook
+    </span>
+  </label>
+  <label
+    className="sc-AxirZ FIgky"
+  >
+    <span>
+      with ottoenghi
+    </span>
+  </label>
+  <label
+    className="sc-AxiKw eCeNVD"
+  >
+    <span>
+      Yotam Ottolenghi—the chef behind instant cookbook classics Jerusalem, Plenty, Ottolenghi Simple and a string of beloved London restaurants—has been at the helm of the culinary vegetable renaissance.
+    </span>
+  </label>
+  <button
+    className="sc-AxhCb hIDtBL"
+    data-testid="button"
+    disabled={false}
+    onClick={[Function]}
+    size="medium"
+    width="245px"
+  >
+    <span>
+      Discover the recipes
+    </span>
+  </button>
+</div>
+`;

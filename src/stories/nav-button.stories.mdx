@@ -1,0 +1,26 @@
+import { Meta, Story, Preview, Code, Props } from '@storybook/addon-docs/blocks';
+import { Small, Medium, Large, CheckedNavButton} from './nav-button.stories';
+import NavButton from '../components/atoms/nav-button';
+
+<Meta title="Atoms|NavButton" component={NavButton} />
+
+# NavButton
+
+This section describe all variant of NavButton component. You can play with 3 sizes: `small`, `medium` and `large`.
+
+<div style={{ display: 'flex', justifyContent: 'space-between', width: '600px' }}>
+    <CheckedNavButton onClick={e => alert('Clicked')} />
+    <Small onClick={e => alert('Clicked')} />
+    <Medium onClick={e => alert('Clicked')} />
+    <Large onClick={e => alert('Clicked')} />
+</div>
+
+Now let's see in details !
+
+```javascript
+<NavButton size="large" onClick={e => alert('Clicked')}>Large NavButton</Button>
+```
+
+# Props
+
+<Props of={NavButton} />

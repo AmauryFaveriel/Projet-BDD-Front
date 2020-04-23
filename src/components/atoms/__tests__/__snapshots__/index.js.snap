@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BigTitle renders correctly 1`] = `
+<label
+  className="sc-AxjAm fSUMXK"
+>
+  Content
+</label>
+`;
+
+exports[`MediumTitle renders correctly 1`] = `
+<label
+  className="sc-AxirZ eozwuZ"
+>
+  Content
+</label>
+`;
+
+exports[`NavItem renders correctly 1`] = `
+<p
+  className="sc-AxiKw esykbW"
+>
+  Content
+</p>
+`;
+
+exports[`RegularText renders correctly 1`] = `
+<label
+  className="sc-AxhCb icaIA-D"
+>
+  Content
+</label>
+`;
+
+exports[`SubTitle renders correctly 1`] = `
+<label
+  className="sc-AxhUy bmcXeL"
+>
+  Content
+</label>
+`;

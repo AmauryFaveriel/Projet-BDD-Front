@@ -1,0 +1,30 @@
+import { Meta, Story, Preview, Code, Props } from '@storybook/addon-docs/blocks';
+import { ArrowNavigationComponent } from './arrow-navigation.stories';
+import ArrowNavigation from '../components/atoms/button';
+
+<Meta title="Atoms|ArrowNavigation" component={ArrowNavigation} />
+
+# ArrowNavigation
+
+This section describe the ArrowNavigation component.
+
+<div style={{ height: '60px',position: 'relative' }}>
+    <ArrowNavigationComponent
+        onClickLeft={() => alert("left")}
+        onClickRight={() => alert("right")}
+    />
+</div>
+
+Now let's see in details !
+
+```javascript
+    <ArrowNavigation
+      testid="arrow-navigation"
+      onClickLeft={() => alert("left")}
+      onClickRight={() => alert("right")}
+    />
+```
+
+# Props
+
+<Props of={ArrowNavigation} />
