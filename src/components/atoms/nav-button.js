@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+import {
+  Link,
+} from 'react-router-dom';
+
 const sizes = {
   small: {
     fontSize: '12px',
@@ -17,38 +21,43 @@ const sizes = {
   },
 };
 
-const StyledNavButton = styled.button`
+const StyledNavButton = styled(Link)`
   font-size: ${(props) => sizes[props.size].fontSize};
   line-height: ${(props) => sizes[props.size].lineHeight};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
   font-family: Lora;
   font-style: normal;
   font-weight: bold;
   width: 100%;
+  text-align: center;
   outline: none;
   border: none;
   cursor: pointer;
-  background-color: ${(props) => (props.isChecked ? '#f39885' : '#ffffff')};
-  color: ${(props) => (props.isChecked ? '#3e3027' : '#c0b6b3')};
+  background-color: #ffffff;
+  color: ${(props) => (props.ischecked ? '#3e3027' : '#c0b6b3')};
   :disabled {
     background-color: #e5e7eb;
     color: #999999;
     cursor: not-allowed;
   }
   :hover {
-    background-color: #f39885;
-    color: #3e3027;
+    color: #3E3027;
   }
 `;
 
 const NavButton = ({
-  size, children, onClick, testid, isChecked, disabled,
+  size, children, onClick, testid, isChecked, disabled, to,
 }) => (
   <StyledNavButton
-    isChecked={isChecked}
+    ischecked={isChecked ? 'true' : undefined}
     size={size}
     data-testid={testid}
     onClick={onClick}
     disabled={disabled}
+    to={to}
   >
     {children}
   </StyledNavButton>
@@ -61,6 +70,7 @@ NavButton.defaultProps = {
   testid: 'NavButton',
   disabled: false,
   isChecked: false,
+  to: '',
 };
 
 NavButton.propTypes = {
@@ -76,6 +86,8 @@ NavButton.propTypes = {
   isChecked: PropTypes.bool,
   /** Optionnal disabled */
   disabled: PropTypes.bool,
+  /** Optionnal disabled */
+  to: PropTypes.string,
 };
 
 export default NavButton;
