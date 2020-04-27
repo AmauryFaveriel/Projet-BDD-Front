@@ -5,15 +5,13 @@ import SidePanel from '../atoms/side-panel';
 import Body from '../organisms/home/home-body';
 import AboutImage from '../../assets/about.png';
 
-export default (props) => (
+export default () => (
   <Body testid="body">
     <SidePanel testid="side-panel-left">
       <Description
-        bigTitle="Pappardelle with rose harissa, black olives and capers"
-        subTitle="with ottoenghi"
+        bigTitle="Let’s know about me"
         text="Post emensos insuperabilis expeditionis eventus languentibus partium animis, quas periculorum varietas fregerat et laborum, nondum tubarum cessante clangore vel milite locato per stationes hibernas."
         testid="description"
-        onClick={() => props.history.push('/recipe')}
       />
     </SidePanel>
     <SidePanel

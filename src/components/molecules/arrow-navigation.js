@@ -26,10 +26,10 @@ const ArrowNavigation = ({
   testidArrowRight,
 }) => (
   <StyledArrowNavigationGroup data-testid={testid}>
-    <NavButton testid={testidArrowLeft} onClick={() => onClickLeft()}>
+    <NavButton hoverable testid={testidArrowLeft} onClick={() => onClickLeft()}>
       <img alt="left-arrow" src={leftArrow} width="15px" />
     </NavButton>
-    <NavButton testid={testidArrowRight} onClick={() => onClickRight()}>
+    <NavButton hoverable testid={testidArrowRight} onClick={() => onClickRight()}>
       <img alt="right-arrow" src={rightArrow} width="15px" />
     </NavButton>
   </StyledArrowNavigationGroup>

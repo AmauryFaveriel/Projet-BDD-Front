@@ -23,7 +23,7 @@ const InputGroup = ({
       size={size}
       disabled={disabled}
       onChange={onChange}
-      data-testid={testid}
+      testid={testid}
     />
     {error && <Error size="small"><span>There is an error !</span></Error>}
   </StyledInputGroup>

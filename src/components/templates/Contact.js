@@ -10,6 +10,7 @@ import TextAreaGroup from '../molecules/textarea-group';
 import ContactBody from '../organisms/contact/contact-body';
 
 import Button from '../atoms/button';
+import { validateEmail } from '../../utils/index';
 
 export default () => {
   const [name, setName] = useState('');
@@ -17,9 +18,14 @@ export default () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const queryState = {
-    fetching: false,
-    readyToFetch: true,
+  // eslint-disable-next-line max-len
+  const isReadyToSubmit = () => Boolean(name.length && surname.length && validateEmail(email) && email.length && message.length);
+
+  const reset = () => {
+    setName('');
+    setSurname('');
+    setEmail('');
+    setMessage('');
   };
 
   return (
@@ -37,34 +43,27 @@ export default () => {
         <ContactBody>
           <InputGroup
             label="name"
-            error={!queryState.readyToFetch}
             onChange={(e) => setName(e.target.value)}
-            disabled={queryState.fetching}
-            testid="username-field"
+            testid="name-field"
           />
           <InputGroup
             label="surname"
-            error={!queryState.readyToFetch}
             onChange={(e) => setSurname(e.target.value)}
-            disabled={queryState.fetching}
-            testid="username-field"
+            testid="surname-field"
           />
           <InputGroup
             label="email"
-            error={!queryState.readyToFetch}
+            error={Boolean(email && !validateEmail(email))}
             onChange={(e) => setEmail(e.target.value)}
-            disabled={queryState.fetching}
-            testid="username-field"
+            testid="email-field"
           />
           <TextAreaGroup
             label="message"
             rows={15}
-            error={!queryState.readyToFetch}
             onChange={(e) => setMessage(e.target.value)}
-            disabled={queryState.fetching}
-            testid="username-field"
+            testid="message-field"
           />
-          <Button width="245px" onClick={() => console.log('clicked')}>
+          <Button testid="submit" disabled={!isReadyToSubmit()} width="245px" onClick={() => reset()}>
             <span>Send message</span>
           </Button>
         </ContactBody>

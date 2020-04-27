@@ -19,7 +19,9 @@ export default () => (
       background="white"
       testid="side-panel-right"
     >
-      <span>Recipe</span>
+      <span>
+        Recipe Instructions
+      </span>
     </SidePanel>
   </Body>
 );

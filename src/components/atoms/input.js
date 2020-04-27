@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { darken } from 'polished';
 
 const sizes = {
   small: {
@@ -55,14 +54,13 @@ Input.displayName = 'Input';
 Input.defaultProps = {
   size: 'medium',
   placeholder: 'Type here',
-  testid: 'input',
 };
 
 Input.propTypes = {
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
-  testid: PropTypes.string,
+  testid: PropTypes.string.isRequired,
 };
 
 export default Input;
