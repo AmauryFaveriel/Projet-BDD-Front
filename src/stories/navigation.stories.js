@@ -4,11 +4,13 @@ import React from 'react';
 import Navigation from '../components/molecules/navigation';
 
 // eslint-disable-next-line import/prefer-default-export
-export const NavigationComponent = (props) => (
+export const NavigationComponent = ({
+  testid, checkedIndex, onClick, elements,
+}) => (
   <Navigation
-    testid={props.testid}
-    checkedIndex={props.checkedIndex}
-    onClick={props.onClick}
-    elements={props.elements}
+    testid={testid}
+    checkedIndex={checkedIndex}
+    onClick={onClick}
+    elements={elements}
   />
 );

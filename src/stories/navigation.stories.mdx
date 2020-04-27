@@ -1,5 +1,5 @@
 import { Meta, Story, Preview, Code, Props } from '@storybook/addon-docs/blocks';
-import { NavigationComponent } from './arrow-navigation.stories';
+import { NavigationComponent } from './navigation.stories';
 import Navigation from '../components/atoms/button';
 
 <Meta title="Atoms|Navigation" component={Navigation} />
@@ -11,14 +11,14 @@ This section describe the Navigation component.
 <div style={{ height: '60px',position: 'relative' }}>
       <NavigationComponent
         testid="navigation"
-        checkedIndex={navIndex}
-        onClick={(index) => setNavIndex(index)}
+        checkedIndex={0}
+        onClick={(index) => alert(index)}
         elements={[
           { name: 'Recipes', href: 'recipes' },
           { name: 'About', href: 'about' },
           { name: 'Contact', href: 'contact' },
         ]}
-      />,
+      />
 </div>
 
 Now let's see in details !
@@ -26,14 +26,14 @@ Now let's see in details !
 ```javascript
       <NavigationComponent
         testid="navigation"
-        checkedIndex={navIndex}
-        onClick={(index) => setNavIndex(index)}
+        checkedIndex={0}
+        onClick={(index) => alert(index)}
         elements={[
           { name: 'Recipes', href: 'recipes' },
           { name: 'About', href: 'about' },
           { name: 'Contact', href: 'contact' },
         ]}
-      />,
+      />
 ```
 
 # Props

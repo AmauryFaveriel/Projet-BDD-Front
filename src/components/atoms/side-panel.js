@@ -10,7 +10,7 @@ const Side = styled.div`
   height: 100%;
   background: ${(props) => (props.hasBackground
     ? `no-repeat center/110% url(${props.background})`
-    : '#F7F2EF')};
+    : `${props.background}`)};
 `;
 
 const SidePanel = ({

@@ -1,16 +1,21 @@
 import React, { useState, useEffect } from 'react';
 
+// React-router
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
+
 // App components
 import Main from './components/layouts/main';
-import Home from './components/organisms/home';
 import HomeHeader from './components/organisms/home/home-header';
 import Navigation from './components/molecules/navigation';
-import Description from './components/molecules/description';
-import ArrowNavigation from './components/molecules/arrow-navigation';
 
-import SidePanel from './components/atoms/side-panel';
-import HomeBody from './components/organisms/home/home-body';
-import exampleImage from './assets/recipe_example.png';
+import Home from './components/templates/Home';
+import About from './components/templates/About';
+import Contact from './components/templates/Contact';
+import Recipe from './components/templates/Recipe';
 
 const App = () => {
   // State to deal with querying
@@ -20,7 +25,7 @@ const App = () => {
     logged: false,
   });
 
-  const [navIndex, setNavIndex] = useState(0);
+  const [navIndex, setNavIndex] = useState(-1);
 
   // Effect to check if we can activate button
   useEffect(() => {
@@ -37,46 +42,36 @@ const App = () => {
   };
 
   return (
-    <Main>
-      {!queryState.logged && (
-        <Home>
-          <HomeHeader>
-            <Navigation
-              testid="navigation"
-              checkedIndex={navIndex}
-              onClick={(index) => setNavIndex(index)}
-              elements={[
-                { name: 'Recipes', href: 'recipes' },
-                { name: 'About', href: 'about' },
-                { name: 'Contact', href: 'contact' },
-              ]}
-            />
-          </HomeHeader>
-          <HomeBody testid="body">
-            <SidePanel testid="side-panel-left">
-              <Description
-                bigTitle="Let's cook"
-                subTitle="with ottoenghi"
-                text="Yotam Ottolenghi—the chef behind instant cookbook classics Jerusalem, Plenty, Ottolenghi Simple and a string of beloved London restaurants—has been at the helm of the culinary vegetable renaissance."
-                buttonContent="Discover the recipes"
-                testid="description"
-                onClick={() => console.log('View recipe')}
-              />
-            </SidePanel>
-            <SidePanel
-              hasBackground
-              background={exampleImage}
-              testid="side-panel-right"
-            />
-          </HomeBody>
-          <ArrowNavigation
-            testid="arrow-navigation"
-            onClickLeft={() => console.log('left')}
-            onClickRight={() => console.log('right')}
+    <Router>
+      <Main>
+        <HomeHeader>
+          <Navigation
+            testid="navigation"
+            checkedIndex={navIndex}
+            onClick={(index) => setNavIndex(index)}
+            elements={[
+              { name: 'Recipes', href: '' },
+              { name: 'About', href: 'about' },
+              { name: 'Contact', href: 'contact' },
+            ]}
           />
-        </Home>
-      )}
-    </Main>
+        </HomeHeader>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/recipe">
+            <Recipe />
+          </Route>
+          <Route path="/contact">
+            <Contact />
+          </Route>
+        </Switch>
+      </Main>
+    </Router>
   );
 };
 

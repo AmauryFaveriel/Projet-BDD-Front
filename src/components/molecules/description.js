@@ -6,6 +6,7 @@ import BigTitle from '../atoms/big-title';
 import SubTitle from '../atoms/subtitle';
 import RegularText from '../atoms/regular-text';
 import Button from '../atoms/button';
+import MediumTitle from '../atoms/medium-title';
 
 const StyledDescriptionGroup = styled.div`
   display: flex;
@@ -20,22 +21,40 @@ const Description = ({
   subTitle,
   text,
   buttonContent,
+  mediumTitle,
   testid,
   onClick,
 }) => (
   <StyledDescriptionGroup data-testid={testid}>
+    {bigTitle && (
     <BigTitle large>
       <span>{bigTitle}</span>
     </BigTitle>
+    )}
+    {subTitle
+    && (
     <SubTitle>
       <span>{subTitle}</span>
     </SubTitle>
+    )}
+    {text
+    && (
     <RegularText>
       <span>{text}</span>
     </RegularText>
+    )}
+    {mediumTitle
+    && (
+    <MediumTitle width="245px" onClick={() => onClick()}>
+      <span>{mediumTitle}</span>
+    </MediumTitle>
+    )}
+    {buttonContent
+    && (
     <Button width="245px" onClick={() => onClick()}>
       <span>{buttonContent}</span>
     </Button>
+    )}
   </StyledDescriptionGroup>
 );
 
@@ -43,15 +62,22 @@ const Description = ({
 Description.displayName = 'Description';
 Description.defaultProps = {
   testid: 'description',
+  bigTitle: null,
+  subTitle: null,
+  text: null,
+  buttonContent: null,
+  onClick: null,
+  mediumTitle: null,
 };
 
 Description.propTypes = {
-  bigTitle: PropTypes.string.isRequired,
-  subTitle: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-  buttonContent: PropTypes.string.isRequired,
+  bigTitle: PropTypes.string,
+  subTitle: PropTypes.string,
+  text: PropTypes.string,
+  buttonContent: PropTypes.string,
   testid: PropTypes.string,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
+  mediumTitle: PropTypes.string,
 };
 
 export default Description;
