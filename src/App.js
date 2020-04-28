@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 // React-router
 import {
@@ -19,27 +19,27 @@ import Recipe from './components/templates/Recipe';
 
 const App = () => {
   // State to deal with querying
-  const [queryState, setQueryState] = useState({
-    fetching: false,
-    readyToFetch: false,
-    logged: false,
-  });
+  // const [queryState, setQueryState] = useState({
+  //   fetching: false,
+  //   readyToFetch: false,
+  //   logged: false,
+  // });
 
   const [navIndex, setNavIndex] = useState(-1);
 
   // Effect to check if we can activate button
-  useEffect(() => {
-    setQueryState({ fetching: false, readyToFetch: true });
-  }, []);
+  // useEffect(() => {
+  //   setQueryState({ fetching: false, readyToFetch: true });
+  // }, []);
 
   // Simulate API call
-  const fetchMock = () => {
-    setQueryState({ fetching: true, readyToFetch: false });
-    const timeout = setTimeout(() => {
-      setQueryState({ fetching: false, readyToFetch: false, logged: true });
-      clearTimeout(timeout);
-    }, 4000);
-  };
+  // const fetchMock = () => {
+  //   setQueryState({ fetching: true, readyToFetch: false });
+  //   const timeout = setTimeout(() => {
+  //     setQueryState({ fetching: false, readyToFetch: false, logged: true });
+  //     clearTimeout(timeout);
+  //   }, 4000);
+  // };
 
   return (
     <Router>

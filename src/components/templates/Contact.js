@@ -36,6 +36,7 @@ export default () => {
           subTitle="with ottoenghi"
           text="Yotam Ottolenghi—the chef behind instant cookbook classics Jerusalem, Plenty, Ottolenghi Simple and a string of beloved London restaurants—has been at the helm of the culinary vegetable renaissance."
           testid="description"
+          mediumTitle="Follow me on social media"
           onClick={() => console.log('View recipe')}
         />
       </SidePanel>
