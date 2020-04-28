@@ -3,25 +3,38 @@ import React from 'react';
 import Description from '../molecules/description';
 import SidePanel from '../atoms/side-panel';
 import Body from '../organisms/home/home-body';
+import MediumTitle from '../atoms/medium-title';
+import RegularText from '../atoms/regular-text';
+import RecipeBody from '../organisms/recipe/recipe-body';
 
-export default () => (
-  <Body testid="body">
-    <SidePanel testid="side-panel-left">
-      <Description
-        bigTitle=" Let’s know about me"
-        subTitle="with ottoenghi"
-        text="Post emensos insuperabilis expeditionis eventus languentibus partium animis, quas periculorum varietas fregerat et laborum, nondum tubarum cessante clangore vel milite locato per stationes hibernas."
-        testid="description"
-        onClick={() => console.log('View recipe')}
-      />
-    </SidePanel>
-    <SidePanel
-      background="white"
-      testid="side-panel-right"
-    >
-      <span>
-        Recipe Instructions
-      </span>
-    </SidePanel>
-  </Body>
-);
+// Import mocked data
+import data from '../../__mocks__/recipe.json';
+
+export default () => {
+  const { instructions, title, description } = data;
+  return (
+    <Body testid="body">
+      <SidePanel testid="side-panel-left">
+        <Description
+          bigTitle={title}
+          text={description}
+          testid="description"
+          onClick={() => console.log('View recipe')}
+        />
+      </SidePanel>
+      <SidePanel
+        background="white"
+        testid="side-panel-right"
+      >
+        <RecipeBody>
+          <MediumTitle>
+            Recipe Instructions
+          </MediumTitle>
+          <RegularText>
+            {instructions}
+          </RegularText>
+        </RecipeBody>
+      </SidePanel>
+    </Body>
+  );
+};
