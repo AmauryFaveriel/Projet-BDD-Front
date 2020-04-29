@@ -2,7 +2,8 @@
 
 exports[`BigTitle renders correctly 1`] = `
 <label
-  className="sc-AxjAm fSUMXK"
+  className="sc-AxjAm gpbKzO"
+  size="large"
 >
   Content
 </label>

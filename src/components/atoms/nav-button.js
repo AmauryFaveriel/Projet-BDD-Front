@@ -44,20 +44,20 @@ const StyledNavButton = styled(Link)`
     cursor: not-allowed;
   }
   :hover {
-    background-color: ${(props) => (props.hoverable ? '#F39885' : '#ffffff')};
+    background-color: ${(props) => (props.ishoverable ? '#F39885' : '#ffffff')};
     color: #3E3027;
   }
 `;
 
 const NavButton = ({
-  size, children, onClick, testid, isChecked, disabled, to, hoverable,
+  size, children, onClick, testid, isChecked, disabled, to, ishoverable,
 }) => (
   <StyledNavButton
     ischecked={isChecked ? 'true' : undefined}
     size={size}
     data-testid={testid}
     onClick={onClick}
-    hoverable={hoverable.toString()}
+    ishoverable={ishoverable ? 'true' : undefined}
     disabled={disabled}
     to={to}
   >
@@ -73,7 +73,7 @@ NavButton.defaultProps = {
   disabled: false,
   isChecked: false,
   to: '',
-  hoverable: false,
+  ishoverable: false,
 };
 
 NavButton.propTypes = {
@@ -92,7 +92,7 @@ NavButton.propTypes = {
   /** Optionnal disabled */
   to: PropTypes.string,
   /** Optionnal disabled */
-  hoverable: PropTypes.bool,
+  ishoverable: PropTypes.bool,
 };
 
 export default NavButton;

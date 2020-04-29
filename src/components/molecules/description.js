@@ -11,7 +11,7 @@ import MediumTitle from '../atoms/medium-title';
 const StyledDescriptionGroup = styled.div`
   display: flex;
   flex-direction: column;
-  height: 350px;
+  height: 260px;
   justify-content: space-between;
   width: 70%;
 `;
@@ -19,6 +19,7 @@ const StyledDescriptionGroup = styled.div`
 const Description = ({
   bigTitle,
   subTitle,
+  titleSize,
   text,
   buttonContent,
   mediumTitle,
@@ -27,7 +28,7 @@ const Description = ({
 }) => (
   <StyledDescriptionGroup data-testid={testid}>
     {bigTitle && (
-    <BigTitle large>
+    <BigTitle size={titleSize}>
       <span>{bigTitle}</span>
     </BigTitle>
     )}
@@ -68,6 +69,7 @@ Description.defaultProps = {
   buttonContent: null,
   onClick: null,
   mediumTitle: null,
+  titleSize: 'large',
 };
 
 Description.propTypes = {
@@ -78,6 +80,7 @@ Description.propTypes = {
   testid: PropTypes.string,
   onClick: PropTypes.func,
   mediumTitle: PropTypes.string,
+  titleSize: PropTypes.string,
 };
 
 export default Description;

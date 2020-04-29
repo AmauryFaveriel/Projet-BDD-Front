@@ -2,11 +2,12 @@
 
 exports[`Description renders correctly 1`] = `
 <div
-  className="sc-AxgMl bleTdY"
+  className="sc-AxgMl cA-dEMK"
   data-testid="description"
 >
   <label
-    className="sc-AxjAm fSUMXK"
+    className="sc-AxjAm gpbKzO"
+    size="large"
   >
     <span>
       Let's cook
@@ -35,7 +36,7 @@ exports[`Description renders correctly 1`] = `
     width="245px"
   >
     <span>
-      Discover the recipes
+      Discover the recipe
     </span>
   </button>
 </div>
