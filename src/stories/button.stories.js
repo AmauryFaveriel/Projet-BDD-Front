@@ -1,5 +1,5 @@
-import React from "react";
-import Button from "../components/atoms/button";
+import React from 'react';
+import Button from '../components/atoms/button';
 
 export const Small = (props) => (
   <Button size="small" testid="small-button" onClick={props.onClick}>

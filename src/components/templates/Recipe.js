@@ -17,9 +17,9 @@ export default () => {
       <SidePanel testid="side-panel-left">
         <Description
           bigTitle={title}
+          titleSize="small"
           text={description}
           testid="description"
-          onClick={() => console.log('View recipe')}
         />
       </SidePanel>
       <SidePanel

@@ -13,7 +13,7 @@ describe('Description', () => {
       bigTitle="Let's cook"
       subTitle="with ottoenghi"
       text="Yotam Ottolenghi—the chef behind instant cookbook classics Jerusalem, Plenty, Ottolenghi Simple and a string of beloved London restaurants—has been at the helm of the culinary vegetable renaissance."
-      buttonContent="Discover the recipes"
+      buttonContent="Discover the recipe"
       testid="description"
       onClick={spy}
     />).toJSON();
